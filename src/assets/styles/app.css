@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+@import './components/index.css';
+@import './template/index.css';
+@import './vendors/index.css';
+@import './tailwind/index.css';
+
+.boardCalcHeight {
+    max-height: calc(100vh - 1.75rem - 320px);
+    overflow-y: auto;
+}
+
+.boardContainer {
+    min-height: calc(100vh - 64px - 48px - 85px);
+}

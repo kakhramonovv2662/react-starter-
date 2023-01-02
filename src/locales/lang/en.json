@@ -1,0 +1,16 @@
+{
+    "actions": {
+        "text":"Actions",
+        "add": "Add",
+        "cancel": "Cancel",
+        "save": "Save",
+        "delete": "Delete",
+        "edit": "Edit",
+        "clear":"Clear",
+        "succesDeleted": "Successfuly Deleted",
+        "filter":"Filter",
+        "connect": "Connect",
+        "export":"Export",
+        "setting":"Column Settings"
+      }
+}

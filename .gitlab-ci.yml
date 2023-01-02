@@ -1,0 +1,31 @@
+cache:
+  paths:
+    - node_modules/
+    - .yarn
+
+stages:
+  - build
+  - test
+  - deploy
+  - push
+
+build:
+  image: docker:19.03.0-dind
+  services:
+    - docker:dind
+  stage: build
+  before_script:
+    - cat $DEV_ENV >> .env
+    - make docker-login
+  script:
+    - make build-image
+    - make push-image
+  artifacts:
+    paths:
+      - /app/dist
+  only:
+    - dev
+    - main
+  tags:
+    - aos-dev-runner
+    # - aos-dev-docker-runner
