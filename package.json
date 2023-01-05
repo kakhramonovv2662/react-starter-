@@ -2,6 +2,19 @@
   "name": "Bilim",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "run-p watch:css start",
+    "preview": "vite preview",
+    "build": "run-s build:css build:prod",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "build:css": "cross-env TAILWIND_MODE=build NODE_ENV=production postcss src/assets/styles/app.css -o src/index.css",
+    "watch:css": "cross-env TAILWIND_MODE=watch NODE_ENV=development postcss src/assets/styles/app.css -o src/index.css --watch",
+    "start": "delay 5 && vite",
+    "build:prod": "tsc && vite build",
+    "analyze": "source-map-explorer 'build/static/js/*.js'"
+  },
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
@@ -12,8 +25,9 @@
     "@types/react-dom": "^18.0.10",
     "axios": "^1.2.2",
     "classnames": "^2.3.2",
-    "eslint-plugin-prettier": "^4.2.1",
+    "cross-env": "^7.0.3",
     "formik": "^2.2.9",
+    "history": "^5.3.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-i18next": "^12.1.1",
@@ -28,34 +42,20 @@
     "yup": "^0.32.11",
     "zustand": "^4.2.0"
   },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  },
   "devDependencies": {
     "@types/react-i18next": "^8.1.0",
     "@types/styled-components": "^5.1.26",
     "@vitejs/plugin-react": "^3.0.0",
+    "delay-cli": "^2.0.0",
+    "eslint": "^8.31.0",
+    "eslint-auto-fix": "^1.0.4",
+    "eslint-config-react": "^1.1.7",
+    "eslint-config-standard-with-typescript": "^26.0.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-n": "^15.6.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-promise": "^6.1.1",
+    "eslint-plugin-react": "^7.31.11",
     "vite-tsconfig-paths": "^4.0.3"
   }
 }

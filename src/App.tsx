@@ -1,8 +1,14 @@
-import "./App.css";
-import React from "react";
+import Main from "@components/common/main/Main";
+import { BrowserRouter } from "react-router-dom";
+import { GlobalStyles } from "./styles";
 
 function App() {
-  return <div className="App">New App</div>;
+  return (
+    <BrowserRouter>
+      <GlobalStyles />
+      <Main />
+    </BrowserRouter>
+  );
 }
 
 export default App;
