@@ -3,8 +3,7 @@ const PORT = import.meta.env.VITE_PORT_PROD;
 
 export const appConfig = {
   apiPrefix: URL + ":" + PORT,
-  authenticatedEntryPath: import.meta.env.VITE_MAIN_PATH || "/dashboard",
-  unAuthenticatedEntryPath: import.meta.env.VITE_AUTH_PATH || "/sign-in",
+  authenticatedEntryPath: import.meta.env.VITE_MAIN_PATH || "/about",
   tourPath: "",
   enableMock: false,
 };

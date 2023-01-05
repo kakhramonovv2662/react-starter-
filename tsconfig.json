@@ -17,7 +17,10 @@
     "noEmit": true,
     "jsx": "react-jsx",
     "paths": {
-      "@/*": ["./src/*"]
+      "@assets/*": ["./src/assets/*"],
+      "@components/*": ["./src/components/*"],
+      "@main": ["./src/modules/main/index"],
+      "@main/*": ["./src/modules/main/*"],
     }
   },
   "include": ["src", "**/*.ts", "**/*.tsx", "**/*.js", "**/*.js"],
